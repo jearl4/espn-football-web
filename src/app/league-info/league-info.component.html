@@ -1,0 +1,7 @@
+<h2>League info</h2>
+<h3>{{ leagueInfo.settings.name }}</h3>
+<ul>
+  <li *ngFor="let team of leagueInfo.teams">
+    {{ teamName(team.location, team.nickname) }}
+  </li>
+</ul>
