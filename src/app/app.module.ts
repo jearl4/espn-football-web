@@ -9,9 +9,10 @@ import { LeagueInfoComponent } from './league-info/league-info.component';
 
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatCardModule} from '@angular/material/card';
+import { TeamDetailComponent } from './team-detail/team-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, LeagueInfoComponent],
+  declarations: [AppComponent, LeagueInfoComponent, TeamDetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

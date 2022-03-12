@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { leagueInfo } from '../dto/league-info';
-import { LeagueInfoService } from '../league-info.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { LeagueInfo } from '../dto/league-info';
+import { LeagueInfoService } from './league-info.service';
 
 @Component({
   selector: 'app-league-info',
@@ -8,7 +8,9 @@ import { LeagueInfoService } from '../league-info.service';
   styleUrls: ['./league-info.component.scss'],
 })
 export class LeagueInfoComponent implements OnInit {
-  leagueInfo: leagueInfo = {
+  @Input() teamId!: number;
+
+  leagueInfo: LeagueInfo = {
     members: [
       {
         displayName: '',
@@ -24,6 +26,7 @@ export class LeagueInfoComponent implements OnInit {
         abbrev: '',
         location: '',
         nickname: '',
+        id: 0,
       },
     ],
     status: {
@@ -37,9 +40,7 @@ export class LeagueInfoComponent implements OnInit {
     this.leagueInfoService
       .getLeagueInfo(apiUrl)
       .subscribe(
-        (leagueInfoResponse) => (
-          (this.leagueInfo = leagueInfoResponse)
-        )
+        (leagueInfoResponse) => (this.leagueInfo = leagueInfoResponse)
       );
   }
 
@@ -48,6 +49,6 @@ export class LeagueInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getLeagueInfo("http://localhost:3000/league");
+    this.getLeagueInfo('http://localhost:3000/league');
   }
 }
