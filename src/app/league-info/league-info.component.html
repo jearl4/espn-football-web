@@ -1,7 +1,11 @@
-<h2>League info</h2>
-<h3>{{ leagueInfo.settings.name }}</h3>
-<ul>
-  <li *ngFor="let team of leagueInfo.teams">
-    {{ teamName(team.location, team.nickname) }}
-  </li>
-</ul>
+<div class="container">
+  <h1 class="row mat-display-4 mb-4">League info</h1>
+  <h2 class="row mat-display-2 mb-3">{{ leagueInfo.settings.name }}</h2>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let team of leagueInfo.teams">
+      <mat-expansion-panel-header>
+        {{ teamName(team.location, team.nickname) }}
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

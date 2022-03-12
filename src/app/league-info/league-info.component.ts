@@ -38,8 +38,7 @@ export class LeagueInfoComponent implements OnInit {
       .getLeagueInfo(apiUrl)
       .subscribe(
         (leagueInfoResponse) => (
-          (this.leagueInfo.settings.name = leagueInfoResponse.settings.name),
-          (this.leagueInfo.teams = leagueInfoResponse.teams)
+          (this.leagueInfo = leagueInfoResponse)
         )
       );
   }
