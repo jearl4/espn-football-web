@@ -4,11 +4,11 @@
   <mat-accordion>
     <mat-expansion-panel *ngFor="let team of leagueInfo.teams">
       <mat-expansion-panel-header>
-        <mat-panel-title class="mat-subheading-2 mb-0">
+        <mat-panel-title class="mat-subheading-1 mb-0">
           {{ teamName(team.location, team.nickname) }}
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <app-team-detail [teamId]="team.id"></app-team-detail>
+      <app-team-ranking [teamId]="team.id"></app-team-ranking>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

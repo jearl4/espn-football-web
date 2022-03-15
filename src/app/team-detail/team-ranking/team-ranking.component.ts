@@ -1,13 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TeamDetail } from '../dto/team-detail';
-import { TeamDetailService } from './team-detail.service';
+import { TeamDetail } from '../../dto/team-detail';
+import { TeamDetailService } from '../team-detail.service';
 
 @Component({
-  selector: 'app-team-detail',
-  templateUrl: './team-detail.component.html',
-  styleUrls: ['./team-detail.component.scss'],
+  selector: 'app-team-ranking',
+  templateUrl: './team-ranking.component.html',
+  styleUrls: ['./team-ranking.component.scss'],
 })
-export class TeamDetailComponent implements OnInit {
+export class TeamRankingComponent implements OnInit {
   @Input() teamId!: number;
 
   constructor(private readonly teamDetailService: TeamDetailService) {}
