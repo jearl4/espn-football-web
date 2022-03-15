@@ -1,13 +1,13 @@
 <mat-card>
-    <mat-card-title class="mat-title">Record</mat-card-title>
-    <mat-card-content *ngFor="let team of teamDetail.teams">
-      <span *ngIf="teamId === team.id">
-        <ul class="mat-subheading-2">
-          <li>Overall wins: {{ team.record.overall.wins }}</li>
-          <li>Overall losses: {{ team.record.overall.losses }}</li>
-          <li>Win percentage: {{ team.record.overall.percentage | percent}}</li>
-          <li>Games back: {{ team.record.overall.gamesBack }}</li>
-        </ul>
-      </span>
-    </mat-card-content>
-  </mat-card>
+  <mat-card-title class="mat-title">Record</mat-card-title>
+  <mat-card-content *ngFor="let team of teamDetail.teams">
+    <span *ngIf="teamId === team.id">
+      <ul class="mat-subheading-2">
+        <li>Overall wins: {{ team.record.overall.wins }}</li>
+        <li>Overall losses: {{ team.record.overall.losses }}</li>
+        <li>Win percentage: {{ team.record.overall.percentage | percent }}</li>
+        <li>Games back: {{ team.record.overall.gamesBack }}</li>
+      </ul>
+    </span>
+  </mat-card-content>
+</mat-card>
