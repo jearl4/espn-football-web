@@ -8,7 +8,10 @@
           {{ teamName(team.location, team.nickname) }}
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <app-team-ranking [teamId]="team.id"></app-team-ranking>
+      <div class="row">
+        <app-team-ranking class="col-sm" [teamId]="team.id"></app-team-ranking>
+        <app-team-record class="col-sm" [teamId]="team.id"></app-team-record>
+      </div>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
