@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-title class="mat-title">Rankings</mat-card-title>
+  <mat-card-content *ngFor="let team of teamDetail.teams">
+    <span *ngIf="teamId === team.id">
+      <ul class="mat-subheading-2">
+        <li>Draft day rank: {{ team.draftDayProjectedRank }}</li>
+        <li>Projected rank: {{ team.currentProjectedRank }}</li>
+        <li>Final rank: {{ team.rankCalculatedFinal }}</li>
+        <li>Playoff seed: {{ team.playoffSeed }}</li>
+      </ul>
+    </span>
+  </mat-card-content>
+</mat-card>

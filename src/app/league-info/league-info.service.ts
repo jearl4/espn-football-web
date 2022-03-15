@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
-import { leagueInfo } from './dto/league-info';
+import { LeagueInfo } from '../dto/league-info';
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +11,9 @@ export class LeagueInfoService {
 
   private leagueInfoUrl = 'http://localhost:3000/league';
 
-  getLeagueInfo(apiUrl: string): Observable<leagueInfo> {
+  getLeagueInfo(apiUrl: string): Observable<LeagueInfo> {
     return this.http
-      .get<leagueInfo>(this.leagueInfoUrl)
+      .get<LeagueInfo>(this.leagueInfoUrl)
       .pipe(tap((_) => console.log('League call made')));
   }
 }
